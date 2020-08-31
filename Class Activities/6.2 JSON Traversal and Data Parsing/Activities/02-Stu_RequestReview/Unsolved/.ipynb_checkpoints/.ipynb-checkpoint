@@ -1,0 +1,284 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Dependencies\n",
+    "import json\n",
+    "import requests "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<Response [200]>\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Specify the URL\n",
+    "\n",
+    "url = \"http://nyt-mongo-scraper.herokuapp.com/api/headlines\"\n",
+    "\n",
+    "# Make request and store response\n",
+    "\n",
+    "response = requests.get(url)\n",
+    "print(response)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46e68df8c22c00150ad398\",\n",
+      "        \"date\": \"2020-08-26T22:47:41.855Z\",\n",
+      "        \"headline\": \"Border Officials Weighed Deploying Migrant \\u2018Heat Ray\\u2019 Ahead of MidtermsIntelligence Officials See No Foreign Effort to Undermine Mail-In VotingAfter Years Attacking L.G.B.T.Q. Rights, Trump Suddenly Tries Outreach\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"Despite the soft image the convention cast, President Trump has made clear that his extreme immigration policies will be central to his re-election pitch.Their assessment contradicted part of President Trump\\u2019s attacks on absentee voting.L.G.B.T.Q. advocates say the president has tried to divide their coalition by targeting transgender people in policy rollbacks.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/us/politics/trump-campaign-immigration.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46e68df8c22c00150ad395\",\n",
+      "        \"date\": \"2020-08-26T22:47:41.850Z\",\n",
+      "        \"headline\": \"N.B.A. Postpones Playoff Games After Bucks Boycott Over ShootingPeaceful Marches and Armored Vehicles: Scenes From Kenosha ProtestsTeenager Is Arrested in Overnight Shooting During Wisconsin Unrest\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"transcriptCrowd leader: \\u201cSay his name!\\u201d Crowd: \\u201cJacob Blake.\\u201d Crowd leader: \\u201cSay his name!\\u201d Crowd: \\u201cJacob Blake.\\u201d Crowd leader: \\u201cBlack lives, they matter now!\\u201d Crowd: \\u201cNo justice, no peace!\\u201d No justice, no peace!\\u201d \\u201cA group of people who are enraged, hurt, afraid, right? Some people protest by laying on the floor. Some people protest by screaming. Some protest by burning. What I\\u2019m saying is, right, until you fix the issue don\\u2019t talk to me about the infrastructure when there\\u2019s life in the balance. The Constitution was written with Black folks not in mind. Back up to when?\\u201d \\u201cYou just said, let\\u2019s burn it all down and start over, who thinks we should burn it all down and start over? Raise your hand.\\u201d \\u201cDoesn\\u2019t matter, doesn\\u2019t matter.\\u201d \\u201cWho thinks we \\u2014 hold on, I\\u2019m just quoting Greg \\u2014 he said, he said, let\\u2019s burn it all down and start over. Raise your \\u2014\\u201d \\u201cI\\u2019m talking about the Constitution, sir. I\\u2019m talking about the Constitution. Burn the Constitution.\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cWhat\\u2019s up, y\\u2019all? What\\u2019s up, y\\u2019all?\\u201d Crowd: \\u201cBlack lives matter. Black lives matter.\\u201d \\u201cClear the area. Please stop destroying our property.\\u201d \\u201c[expletive] you! I\\u2019ve been to Iraq. I\\u2019ve been to Afghanistan.\\u201d [sirens] \\u201cDo not let anyone fall in behind us.\\u201dThe shooting left two people dead and another person wounded during a chaotic night of demonstrations over the shooting of Jacob Blake.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/sports/basketball/nba-boycott-bucks-magic-blake-shooting.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c7808d\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.169Z\",\n",
+      "        \"headline\": \"I Don\\u2019t Know If My Relationship Will Survive the Pandemic\",\n",
+      "        \"saved\": true,\n",
+      "        \"summary\": \"As domestic pressures mount inside homes, we could see an uptick in more breakups, separations and divorces.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/parenting/breakups-divorces-relationships-coronavirus.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c7808c\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.168Z\",\n",
+      "        \"headline\": \"How \\u2018MTV Cribs\\u2019 Rewired My Brain, and Maybe Yours Too\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"The show gave us a giddy peek at the nouveau riche celebrities of the 2000s. It also made \\u201cfake it until you make it\\u201d the Millennial ethos.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/arts/television/mtv-cribs-mariah-carey.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c7808b\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.168Z\",\n",
+      "        \"headline\": \"\\u2018I Fear That We Are Witnessing the End of American Democracy\\u2019\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"The frank racism of the contemporary Republican agenda is on display at the R.N.C.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/opinion/trump-republican-convention-racism.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c7808a\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.168Z\",\n",
+      "        \"headline\": \"Convicted of Sex Crimes, but With No Victims\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"An online sting operation to catch child predators snared hundreds of men, even though no victims were involved.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/magazine/sex-offender-operation-net-nanny.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c78088\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.167Z\",\n",
+      "        \"headline\": \"Border Officials Weighed Deploying Migrant \\u2018Heat Ray\\u2019 Ahead of MidtermsAfter Years Attacking L.G.B.T.Q. Rights, Trump Suddenly Tries Outreach\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"Despite the soft image the convention cast, President Trump has made clear that his extreme immigration policies will be central to his re-election pitch.L.G.B.T.Q. advocates say the president has tried to divide their coalition by targeting transgender people in policy rollbacks.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/us/politics/trump-campaign-immigration.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c78089\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.167Z\",\n",
+      "        \"headline\": \"Hurricane Laura Intensifies to Category 4 StrengthTake a look at Hurricane Laura\\u2019s path toward the Gulf Coast.\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"The hurricane is projected to hit near the Texas-Louisiana border on Thursday, with forecasters warning of \\u201cunsurvivable storm surge\\u201d of 15 to 20 feet.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/us/hurricane-laura-update.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c78087\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.166Z\",\n",
+      "        \"headline\": \"Election Updates: Pence to Take His Turn on Night 3 of ConventionHere\\u2019s what to watch for at the Republican National Convention tonight.Ted Cruz Didn\\u2019t Get a Convention Invite. He Still Has Plenty to Say.\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"Ratings for the convention rose Tuesday. Speakers at the convention have downplayed the coronavirus. Catch up on the latest.In 2016, the Texas senator addressed Republicans but declined to explicitly endorse President Trump. This year, he is on the sidelines.\",\n",
+      "        \"url\": \"https://www.nytimes.comhttps://www.nytimes.com/live/2020/08/26/us/rnc-convention-election\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c78086\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.166Z\",\n",
+      "        \"headline\": \"Teenager Is Arrested in Overnight Shooting During Wisconsin UnrestN.B.A. Postpones Playoff Games After Milwaukee Bucks BoycottPeaceful Marches and Armored Vehicles: Scenes From Kenosha Protests\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"The shooting left two people dead and another person wounded during a chaotic night of demonstrations over the shooting of Jacob Blake.The boycott, in reaction to the Wisconsin shooting, was an extraordinary escalation of how players have demonstrated for social causes this season.transcriptCrowd leader: \\u201cSay his name!\\u201d Crowd: \\u201cJacob Blake.\\u201d Crowd leader: \\u201cSay his name!\\u201d Crowd: \\u201cJacob Blake.\\u201d Crowd leader: \\u201cBlack lives, they matter now!\\u201d Crowd: \\u201cNo justice, no peace!\\u201d No justice, no peace!\\u201d \\u201cA group of people who are enraged, hurt, afraid, right? Some people protest by laying on the floor. Some people protest by screaming. Some protest by burning. What I\\u2019m saying is, right, until you fix the issue don\\u2019t talk to me about the infrastructure when there\\u2019s life in the balance. The Constitution was written with Black folks not in mind. Back up to when?\\u201d \\u201cYou just said, let\\u2019s burn it all down and start over, who thinks we should burn it all down and start over? Raise your hand.\\u201d \\u201cDoesn\\u2019t matter, doesn\\u2019t matter.\\u201d \\u201cWho thinks we \\u2014 hold on, I\\u2019m just quoting Greg \\u2014 he said, he said, let\\u2019s burn it all down and start over. Raise your \\u2014\\u201d \\u201cI\\u2019m talking about the Constitution, sir. I\\u2019m talking about the Constitution. Burn the Constitution.\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cAnd if we don\\u2019t get it \\u2026\\u201d Crowd: \\u201cShut it down!\\u201d \\u201cWhat\\u2019s up, y\\u2019all? What\\u2019s up, y\\u2019all?\\u201d Crowd: \\u201cBlack lives matter. Black lives matter.\\u201d \\u201cClear the area. Please stop destroying our property.\\u201d \\u201c[expletive] you! I\\u2019ve been to Iraq. I\\u2019ve been to Afghanistan.\\u201d [sirens] \\u201cDo not let anyone fall in behind us.\\u201d\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/us/kenosha-shooting-protests-jacob-blake.html\"\n",
+      "    },\n",
+      "    {\n",
+      "        \"__v\": 0,\n",
+      "        \"_id\": \"5f46de5db80c210015c78085\",\n",
+      "        \"date\": \"2020-08-26T22:12:45.165Z\",\n",
+      "        \"headline\": \"Top U.S. Officials Instructed the C.D.C. to Change Testing GuidelinesSchools Can Reopen, Germany Finds, but Expect a \\u2018Roller Coaster\\u2019Tracking Coronavirus Cases at U.S. Colleges and Universities\",\n",
+      "        \"saved\": false,\n",
+      "        \"summary\": \"Many nations eager to resume in-person learning will have trouble matching Germany\\u2019s formula: fast testing, robust contact tracing and low community spread.As college students and professors return to campus in the midst of a pandemic, cases are turning up by the thousands. Here\\u2019s where infections are appearing.\",\n",
+      "        \"url\": \"https://www.nytimes.com/2020/08/26/world/covid-19-coronavirus.html\"\n",
+      "    }\n",
+      "]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# JSON-ify response\n",
+    "\n",
+    "response_json = response.json()\n",
+    "print(json.dumps(response_json, indent = 4, sort_keys = True))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The first response is {\n",
+      "    \"saved\": false,\n",
+      "    \"_id\": \"5f46e68df8c22c00150ad398\",\n",
+      "    \"headline\": \"Border Officials Weighed Deploying Migrant \\u2018Heat Ray\\u2019 Ahead of MidtermsIntelligence Officials See No Foreign Effort to Undermine Mail-In VotingAfter Years Attacking L.G.B.T.Q. Rights, Trump Suddenly Tries Outreach\",\n",
+      "    \"summary\": \"Despite the soft image the convention cast, President Trump has made clear that his extreme immigration policies will be central to his re-election pitch.Their assessment contradicted part of President Trump\\u2019s attacks on absentee voting.L.G.B.T.Q. advocates say the president has tried to divide their coalition by targeting transgender people in policy rollbacks.\",\n",
+      "    \"url\": \"https://www.nytimes.com/2020/08/26/us/politics/trump-campaign-immigration.html\",\n",
+      "    \"date\": \"2020-08-26T22:47:41.855Z\",\n",
+      "    \"__v\": 0\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Print first and last articles\n",
+    "\n",
+    "print(f\"The first response is {json.dumps(response_json[0], indent = 4)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The last response is {\n",
+      "    \"saved\": false,\n",
+      "    \"_id\": \"5f46de5db80c210015c78085\",\n",
+      "    \"headline\": \"Top U.S. Officials Instructed the C.D.C. to Change Testing GuidelinesSchools Can Reopen, Germany Finds, but Expect a \\u2018Roller Coaster\\u2019Tracking Coronavirus Cases at U.S. Colleges and Universities\",\n",
+      "    \"summary\": \"Many nations eager to resume in-person learning will have trouble matching Germany\\u2019s formula: fast testing, robust contact tracing and low community spread.As college students and professors return to campus in the midst of a pandemic, cases are turning up by the thousands. Here\\u2019s where infections are appearing.\",\n",
+      "    \"url\": \"https://www.nytimes.com/2020/08/26/world/covid-19-coronavirus.html\",\n",
+      "    \"date\": \"2020-08-26T22:12:45.165Z\",\n",
+      "    \"__v\": 0\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Print first and last articles\n",
+    "\n",
+    "print(f\"The last response is {json.dumps(response_json[-1], indent = 4)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "We received 11 responses\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Print the number of responses received.\n",
+    "\n",
+    "print(f\"We received {len(response_json)} responses\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
